@@ -17,7 +17,7 @@ class LinkedList:
     def __str__(self):
         printout = ""
         node = self.head
-        while node != None:
+        while node is not None:
 
             # Add to printout string depending on if it's the first
             if printout == "":
@@ -50,7 +50,7 @@ class LinkedList:
         # Get length of linked list
         count = 1
         node = self.head
-        while node.next != None:
+        while node.next is not None:
             node = node.next
             count += 1
 
@@ -63,15 +63,13 @@ class LinkedList:
         node.next = None
 
     def contains(self, value):
-        contains = False
-
         # Check head
         node = self.head
         if node.value == value:
             return True
 
         # Check the rest
-        while node.next != None:
+        while node.next is not None:
             node = node.next
             if node.value == value:
                 return True
@@ -81,7 +79,7 @@ class LinkedList:
     def get_tail(self):
         # Search for node without a next node
         node = self.head
-        while node.next != None:
+        while node.next is not None:
             node = node.next
 
         return node
@@ -90,12 +88,12 @@ class LinkedList:
 class Node:
     # Members
     value = None
-    next  = None
+    next = None
 
     # Methods
     def __init__(self, _nodeValue):
         self.value = _nodeValue
-        self.next  = None
+        self.next = None
 
     def __repr__(self):
         return f"Value: {self.value}"
