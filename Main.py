@@ -65,3 +65,13 @@ print(f"contains 999: {test.contains(999)}")
 
 print(divider)
 print()
+
+
+# reverse test
+print(test)
+print("After reverse")
+test.reverse()
+print(test)
+
+print(divider)
+print()

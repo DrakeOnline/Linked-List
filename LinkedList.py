@@ -84,6 +84,36 @@ class LinkedList:
 
         return node
 
+    def reverse(self):
+        """
+        Method to reverse a link list. Takes no parameters.
+        """
+        nodes = []
+        # Reference first node and add it to list
+        head = self.head
+        node = head
+        nodes.append(node)
+        # Cycle through other nodes and add them
+        while node.next is not None:
+            node = node.next
+            nodes.append(node)
+        # Reverse list
+        nodes = nodes[::-1]
+
+        # Reset all "next" members
+        for i in range(len(nodes)):
+            if i != 3:
+                nodes[i].next = nodes[i+1]
+            else:
+                nodes[i].next = None
+
+        # Set new head value
+        self.head = nodes[0]
+
+        # Uncomment to see new next values of nodes
+        # for i in nodes:
+        #     print(f"{i}'s next value is {i.next}")
+
 
 class Node:
     # Members
